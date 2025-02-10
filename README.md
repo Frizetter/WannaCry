@@ -1,2 +1,2 @@
 This program uses the library curses, to install on windows please enter:
-```pip install curses```
+```pip install windows-curses```
