@@ -1,0 +1,12 @@
+{
+    "monday": 
+    {
+        "gethigh": {"timestart": "10:30", "timefinish": "11:00"}
+    },
+    
+    "friday": 
+    {
+        "make a game": {"timestart": "10:30", "timefinish": "11:00"},
+        "gethigh": {"timestart": "10:30", "timefinish": "11:00"}
+    }
+}
