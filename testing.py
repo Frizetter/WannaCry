@@ -1,23 +1,19 @@
-from datetime import datetime
-t = "11:00"
-d = "13.02.2025"
+import json
 
-def getweekday(d):
-    try:
-        date = datetime.strptime(d, "%d.%m.%Y")
-        day = date.weekday()
-        days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
-        return days[day]
-    except ValueError:
-        return 'valueerror'
-    
-def getminsfbday(t):
-    try:
-        hours, mins = t.split(':')
-        return int(hours) * 60 + int(mins)
-    except ValueError:
-        return 'vallueerror'
-    
-if __name__ == '__main__':
-    print(f'{getweekday(d)}')
-    print(f'{getminsfbday(t)}')
+day = "15.02.2024"
+name = "write a book"
+timestart = "1100"
+timefinish = "1200"
+
+try:
+    with open('secondarytable.json', 'r') as f:
+        data = json.load(f)
+except (FileNotFoundError, json.JSONDecodeError):
+    data = {}
+
+if day not in data:
+    data[day] = {}
+data[day][name] = {'timestart':timestart, 'timefinish':timefinish}
+
+with open('secondarytable.json', 'w') as f:
+    json.dump(data, f, indent=4)
